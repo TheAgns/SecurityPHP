@@ -1,0 +1,1 @@
+# PHP project OOP with different implementations of security
