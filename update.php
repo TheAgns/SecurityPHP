@@ -38,12 +38,20 @@ if(Input::exists()) {
     }
 }
 ?>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+</html>
 <form action="" method="post">
-    <div class="field">
-        <label for="name">Name</label>
-        <input type="text" name="name" value="<?php echo escape($user->data()->name); ?>">
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" value="<?php echo escape($user->data()->name); ?>">
+        </div>
+
         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-        <input type="submit" value="Update">
+        <button type="submit" class="btn btn-primary">Update</button>
     </div>
 </form>
