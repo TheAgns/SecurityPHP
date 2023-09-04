@@ -11,10 +11,6 @@ class UserController extends BaseController
         if (strtoupper($requestMethod) == 'GET') {
             try {
                 $newUser = new NewUser();
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
-                }
                 $user = $newUser->getUser($id);
                 $responseData = json_encode($user);
             } catch (Error $e) {
