@@ -13,6 +13,7 @@ class DB
     {
         try {
             $this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db') . ';charset=' . Config::get('mysql/charset'), Config::get('mysql/username'), Config::get('mysql/password'));
+            $this->_pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -40,7 +41,7 @@ class DB
             }
 
             if ($this->_query->execute()) {
-                $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                $this->_results = $this->_query->fetchAll();
                 $this->_count = $this->_query->rowCount();
             } else {
                 $this->_error = true;

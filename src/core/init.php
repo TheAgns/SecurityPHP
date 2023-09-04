@@ -7,7 +7,7 @@ $GLOBALS['config'] = array(
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'db' => 'project',
+        'db' => 'securityphp',
         'charset' => 'utf8mb4'
     ),
     'sessions' => array(
@@ -17,10 +17,10 @@ $GLOBALS['config'] = array(
 );
 
 spl_autoload_register(function ($class) {
-    require_once 'classes_new/' . $class . '.php';
+    require_once 'src/classes_new/' . $class . '.php';
 });
 
-require_once 'utils/sanitize.php';
+require_once 'src/utils/sanitize.php';
 
 /*
 if (Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('sessions/session_name'))) {

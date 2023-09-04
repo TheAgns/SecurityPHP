@@ -1,24 +1,27 @@
 <?php
 
-require_once 'core/init.php';
+require_once 'src/core/init.php';
 
 if (Session::exists('home')) {
     echo '<p class="alert alert-info">' . Session::flash('home') . '</p>';
 }
 
 $user = new User();
+$newUser = new NewUser();
+$newUser->getUser(0);
 
 if ($user->isLoggedIn()) {
-?>
+    ?>
     <!DOCTYPE html>
     <html>
+
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
+
     <body>
         <div class="container mt-5">
-            <p>Hello, <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"
-                        class="text-primary"><?php echo escape($user->data()->username); ?></a></p>
+            <p>Hello, <a href="profile.php?user=<?php echo escape($user->data()->username); ?>" class="text-primary"><?php echo escape($user->data()->username); ?></a></p>
 
             <ul class="list-group">
                 <li class="list-group-item"><a href="update.php" class="text-dark">Update Profile</a></li>
@@ -40,9 +43,10 @@ if ($user->isLoggedIn()) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
+
     </html>
 
-<?php
+    <?php
 } else {
 
     echo '<p class="mt-5">You need to <a href="login.php" class="text-primary">login</a> or <a href="register.php" class="text-primary">register.</a></p>';
