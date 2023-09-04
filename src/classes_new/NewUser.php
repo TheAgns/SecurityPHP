@@ -19,4 +19,10 @@ class NewUser
         }
         echo "There was an error retrieving the user";
     }
+
+    public function insertUser($fields = array())
+    {
+        $this->_db->insert('users', $fields);
+
+    }
 }
