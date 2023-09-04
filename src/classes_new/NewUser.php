@@ -12,9 +12,9 @@ class NewUser
     {
         // $sql = "SELECT * FROM users WHERE user_id = ?";
         if (is_numeric($id)) {
-            $result = $this->_db->get('users', array('id', '=', $id));
-            if ($result->count()) {
-                return $result->first();
+            $results = $this->_db->get('users', array('id', '=', $id));
+            if ($results->count()) {
+                return $results->first();
             }
         }
         echo "There was an error retrieving the user";
