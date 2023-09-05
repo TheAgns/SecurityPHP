@@ -8,7 +8,7 @@ class NewUser
         $this->_db = DB::getInstance();
 
     }
-    public function getUser($id = null)
+    protected function getUser($id = null)
     {
         // $sql = "SELECT * FROM users WHERE user_id = ?";
         if (is_numeric($id)) {
