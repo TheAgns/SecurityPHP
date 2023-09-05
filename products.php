@@ -31,8 +31,9 @@
     </style>
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php ini_set('display_errors', 1); include 'navbar.php'; ?>
     <?php
+    ini_set('display_errors', 1);
     // Dett her skal vi have lavet om til data fra vores DB istdet, bare hardcodede produkter
     $products = [
         [

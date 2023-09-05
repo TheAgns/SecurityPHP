@@ -2,15 +2,15 @@
 
 class Signup
 {
-    private $_db;
-    public function __construct()
-    {
-        $this->_db = DB::getInstance();
+    // private $_db;
+    // public function __construct()
+    // {
+    //     $this->_db = DB::getInstance();
 
-    }
+    // }
 
-    protected function checkUser($id, $email)
-    {
+    // protected function checkUser($id, $email)
+    // {
 
-    }
+    // }
 }
