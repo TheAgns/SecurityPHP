@@ -23,4 +23,26 @@ class SignupController
         }
         return $result;
     }
+
+    private function invalidId()
+    {
+        $result = null;
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->id)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    private function pwdMatch()
+    {
+        $result = null;
+        if ($this->pwd !== $this->pwdRepeat) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
 }
