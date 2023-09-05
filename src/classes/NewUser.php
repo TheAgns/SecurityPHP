@@ -17,12 +17,6 @@ class NewUser
                 return $results->first();
             }
         }
-        echo "There was an error retrieving the user";
-    }
-
-    public function insertUser($fields = array())
-    {
-        $this->_db->insert('users', $fields);
-
+        throw new Exception('Sorry, there was a problem retrieving the user');
     }
 }
