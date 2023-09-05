@@ -13,7 +13,7 @@ class SignupController extends Signup
         $this->$username = $username;
     }
 
-    private function signupUser()
+    public function signupUser()
     {
         if ($this->emptyInput() == false) {
             // Redirect to error page
@@ -26,7 +26,7 @@ class SignupController extends Signup
             exit();
         }
 
-        $this->insertUser();
+        $this->insertUser(array($this->id, $this->pwd, $this->email, $this->username));
     }
 
     private function emptyInput()

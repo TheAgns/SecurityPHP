@@ -17,6 +17,7 @@ class Signup
         if (!$this->_db->insert('users', $fields)) {
             throw new Exception('Sorry, there was a problem creating your account');
         }
+        $fields = null;
     }
 
     protected function checkUser($id)
