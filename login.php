@@ -42,6 +42,9 @@ if(Input::exists()) {
         <input type="password" name="password" id="password">
     </div>
 
+    <!--Recaptcha -->
+    <div class="g-recaptcha" data-sitekey="6LfAKfgnAAAAAMJ1aHAy-_iepR4oxuVsss0gUQBc"></div>
+
     <div class="field">
         <label for="remember">
             <input type="checkbox" name="remember" id="remember">Remember me

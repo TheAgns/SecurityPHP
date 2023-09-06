@@ -11,7 +11,7 @@ get('/auth/product', 'src/classes/product-list.php');
 
 
 #Get index
-get('/auth', 'index.php');
+get('/securityphp', 'index.php');
 
 #Get product by id.
 get('/auth/product/$id', 'products.php');
