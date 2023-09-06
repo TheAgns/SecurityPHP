@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/router.php';
+require_once __DIR__ . '/router.php';
 
 //Note: Vi mangler .htacess, når den er importet til root i projektet virker routerne.
 
@@ -10,7 +10,7 @@ require_once __DIR__.'/router.php';
 get('/auth/product', 'products.php');
 
 #Get index
-get('/auth', 'index.php');
+get('/securityphp', 'index.php');
 
 #Get product by id.
 get('/auth/product/$id', 'products.php');
@@ -27,7 +27,7 @@ post('/auth/updateusername', 'classes/User.php');
 #Admin routes
 
 #Create product, vi bliver nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
-post('/auth/product/create', 'products.php');  
+post('/auth/product/create', 'products.php');
 
 #Delete product, som på de andre bliver vi nok nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
 post('/auth/product/$id', 'product.php');

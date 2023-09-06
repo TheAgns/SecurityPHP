@@ -8,11 +8,4 @@ class UserController extends NewUser
         $user = $this->getUser($id);
         return $responseData = json_encode($user);
     }
-
-    // POST /user/register
-    public function registerUser($fields = array())
-    {
-        $newUser = new NewUser();
-        $newUser->insertUser($fields);
-    }
 }

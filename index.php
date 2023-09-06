@@ -1,15 +1,40 @@
 <?php
-
 require_once 'src/core/init.php';
+?>
 
-if (Session::exists('home')) {
-    echo '<p class="alert alert-info">' . Session::flash('home') . '</p>';
-}
+<!DOCTYPE html>
+<html lang="en">
 
-$user = new User();
-$newUser = new NewUser();
-$newUser->getUser(0);
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <h3>SECURITY PHP</h3>
+                <ul class="menu-main">
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="a">PRODUCTS</a></li>
+                    <li><a href="a">CART</a></li>
+                    <li><a href="a">PROFILE</a></li>
+                </ul>
+            </div>
+            <ul class="menu-member">
+                <li><a href="a">SIGN UP</a></li>
+                <li><a href="a">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
+
+<?php
+/*
 if ($user->isLoggedIn()) {
     ?>
     <!DOCTYPE html>
@@ -51,4 +76,5 @@ if ($user->isLoggedIn()) {
 
     echo '<p class="mt-5">You need to <a href="login.php" class="text-primary">login</a> or <a href="register.php" class="text-primary">register.</a></p>';
 }
+*/
 ?>
