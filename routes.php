@@ -7,7 +7,9 @@ require_once __DIR__ . '/router.php';
 #User routes
 
 #Get all products
-get('/auth/product', 'products.php');
+//get('/auth/product', 'src/classes/product-list.php');
+get('/auth/product', 'src/classes/product-list.php');
+
 
 #Get index
 get('/auth', 'index.php');
