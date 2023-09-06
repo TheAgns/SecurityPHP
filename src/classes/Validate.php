@@ -46,6 +46,24 @@ class Validate {
                 }
             }
         }
+        
+        //Check if recaptcha box has been filled
+        if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+            // Google secret API
+            $secretAPIkey = '6LfAKfgnAAAAAFPIbzYDV36oTSofW7ql9XzYblyA';
+
+            // reCAPTCHA response
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretAPIkey.'&response='.$_POST['g-recaptcha-response']);
+
+            // Decode JSON and check for fail
+            $response = json_decode($verifyResponse);
+            if(!($response->success)){
+               $this->addError("reCaptcha failed, please try again.");
+            }
+        }
+        else{
+            $this->addError("Please fill in reCaptcha.");
+        }
 
         if(empty($this->_errors)) {
             $this->_passed = true;
