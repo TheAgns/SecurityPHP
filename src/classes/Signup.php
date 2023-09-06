@@ -20,13 +20,11 @@ class Signup
         $fields = null;
     }
 
-    protected function checkUser($id)
+    protected function checkUser($username)
     {
-        if (is_numeric($id)) {
-            $results = $this->_db->get('users', array('id', '=', $id));
-            if ($results->count()) {
-                return $results->first();
-            }
+        $results = $this->_db->get('users', array('username', '=', $username));
+        if ($results->count()) {
+            return $results->first();
         }
         // Redirect to error page
         header("location: ../../index.php");

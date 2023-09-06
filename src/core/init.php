@@ -2,6 +2,11 @@
 
 session_start();
 
+define("CORE_PATH", dirname(__FILE__));
+define("SRC_PATH", dirname(CORE_PATH));
+define("PROJECT_PATH", dirname(SRC_PATH));
+
+
 $GLOBALS['config'] = array(
     'mysql' => array(
         'host' => 'localhost',

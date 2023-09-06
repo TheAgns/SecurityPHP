@@ -2,15 +2,14 @@
 
 class SignupController extends Signup
 {
-    private $id, $pwd, $pwdRepeat, $email, $username;
+    private $username, $pwd, $pwdRepeat, $email;
 
-    public function __construct($id, $pwd, $pwdRepeat, $email, $username)
+    public function __construct($username, $pwd, $pwdRepeat, $email)
     {
-        $this->$id = $id;
+        $this->$username = $username;
         $this->$pwd = $pwd;
         $this->$pwdRepeat = $pwdRepeat;
         $this->$email = $email;
-        $this->$username = $username;
     }
 
     public function signupUser()
@@ -20,19 +19,21 @@ class SignupController extends Signup
             header("location: ../../index.php?error=emptyinput");
             exit();
         }
-        if ($this->invalidId() == false) {
+        if ($this->invalidUsername() == false) {
             // Redirect to error page
             header("location: ../../index.php?error=username");
             exit();
         }
 
-        $this->insertUser(array($this->id, $this->pwd, $this->email, $this->username));
+        $this->insertUser(array($this->username, $this->pwd, $this->email));
     }
 
+    // Private functions for sanitizing and validating input
+    // TODO: move into a valdiation class
     private function emptyInput()
     {
         $result = null;
-        if (empty($this->id) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email || empty($this->username))) {
+        if (empty($this->username) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
             $result = false;
         } else {
             $result = true;
@@ -40,10 +41,10 @@ class SignupController extends Signup
         return $result;
     }
 
-    private function invalidId()
+    private function invalidUsername()
     {
         $result = null;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->id)) {
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
             $result = false;
         } else {
             $result = true;
@@ -65,7 +66,7 @@ class SignupController extends Signup
     private function idTakenCheck()
     {
         $result = null;
-        if (!$this->checkUser($this->id)) {
+        if (!$this->checkUser($this->username)) {
             $result = false;
         } else {
             $result = true;

@@ -2,9 +2,9 @@
 
 class UserView extends NewUser
 {
-    public function showUser($id)
+    public function showUser($username)
     {
-        $results = $this->getUser($id);
+        $results = $this->getUser($username);
         echo "Username: " . $results['username'];
     }
 }
