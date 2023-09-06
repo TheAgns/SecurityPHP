@@ -12,7 +12,7 @@ $GLOBALS['config'] = array(
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'db' => 'securityphp',
+        'db' => 'phpProject',
         'charset' => 'utf8mb4'
     ),
     'sessions' => array(

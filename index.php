@@ -2,6 +2,7 @@
 require_once 'src/core/init.php';
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +20,9 @@ require_once 'src/core/init.php';
                 <ul class="menu-main">
                     <li><a href="/securityphp">HOME</a></li>
                     <li><a href="a">PRODUCTS</a></li>
+                    <li><a href="/auth">HOME</a></li>
+                    <li><a href="/auth/product">PRODUCTS</a></li>
+                    <li><a href="/auth/create">Create product</a></li>
                     <li><a href="a">CART</a></li>
                     <li><a href="a">PROFILE</a></li>
                 </ul>
