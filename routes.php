@@ -23,13 +23,16 @@ post('/auth/deleteUser', 'User.php');
 //Update username
 post('/auth/updateusername', 'classes/User.php');
 
+get('/auth/create', 'src/classes/create.php');
+
+post('/auth/create', 'src/classes/CreateProduct.php');
 
 
 
 #Admin routes
 
 #Create product, vi bliver nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
-post('/auth/product/create', 'products.php');
+//post('/auth/product/create', 'src/classes/CreateProduct.php');
 
 #Delete product, som på de andre bliver vi nok nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
 post('/auth/product/$id', 'product.php');
