@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . '/router.php';
 
 //Note: Vi mangler .htacess, når den er importet til root i projektet virker routerne.
@@ -20,6 +19,8 @@ post('/auth/deleteUser', 'User.php');
 
 //Update username
 post('/auth/updateusername', 'classes/User.php');
+
+post('/securityphp/signup', 'src/api/signup.endpoint.php');
 
 
 

@@ -1,19 +1,20 @@
 <?php
-
+require_once 'src/core/init.php';
 class SignupController extends Signup
 {
     private $username, $pwd, $pwdRepeat, $email;
 
     public function __construct($username, $pwd, $pwdRepeat, $email)
     {
-        $this->$username = $username;
-        $this->$pwd = $pwd;
-        $this->$pwdRepeat = $pwdRepeat;
-        $this->$email = $email;
+        $this->username = $username;
+        $this->pwd = $pwd;
+        $this->pwdRepeat = $pwdRepeat;
+        $this->email = $email;
     }
 
     public function signupUser()
     {
+        /*
         if ($this->emptyInput() == false) {
             // Redirect to error page
             header("location: ../../index.php?error=emptyinput");
@@ -24,8 +25,8 @@ class SignupController extends Signup
             header("location: ../../index.php?error=username");
             exit();
         }
-
-        $this->insertUser(array($this->username, $this->pwd, $this->email));
+        */
+        $this->insertUser($this->username, $this->pwd, $this->email);
     }
 
     // Private functions for sanitizing and validating input

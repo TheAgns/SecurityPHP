@@ -78,7 +78,6 @@ class DB
         $keys = array_keys($fields);
         $values = null;
         $x = 1;
-
         foreach ($fields as $field) {
             $values .= '?';
             if ($x < count($fields)) {
@@ -88,7 +87,7 @@ class DB
         }
 
         $sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES ({$values})";
-
+        echo $sql;
         if (!$this->query($sql, $fields)->error()) {
             return true;
         }

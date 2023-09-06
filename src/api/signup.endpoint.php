@@ -8,10 +8,9 @@ if (isset($_POST["submit"])) {
     $pwdRepeat = $_POST["pwdRepeat"];
     $email = $_POST["email"];
 }
-
 // Create SignupController
 $signupController = new SignupController($username, $pwd, $pwdRepeat, $email);
 $signupController->signupUser();
 
-// Return to front page
-header("location: ../../index.php?error=none");
+$userView = new UserView();
+$userView->showUser($username);

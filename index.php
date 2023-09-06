@@ -17,7 +17,7 @@ require_once 'src/core/init.php';
             <div>
                 <h3>SECURITY PHP</h3>
                 <ul class="menu-main">
-                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="/securityphp">HOME</a></li>
                     <li><a href="a">PRODUCTS</a></li>
                     <li><a href="a">CART</a></li>
                     <li><a href="a">PROFILE</a></li>
@@ -34,7 +34,7 @@ require_once 'src/core/init.php';
             <div class="index-login-signup">
                 <h4>SIGN UP</h4>
                 <p>Sign up here!</p>
-                <form action="src/api/signup.endpoint.php" method="post">
+                <form action="/securityphp/signup" method="post">
                     <input type="text" name="username" placeholder="Username">
                     <input type="password" name="pwd" placeholder="Password">
                     <input type="password" name="pwdRepeat" placeholder="Repeat Password">

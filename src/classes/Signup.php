@@ -1,19 +1,18 @@
 <?php
-
+require_once 'src/core/init.php';
 class Signup
 {
-    private $_db;
-    public function __construct()
+    protected $_db;
+    protected function __construct()
     {
         $this->_db = DB::getInstance();
-
     }
 
-    protected function insertUser($fields = array())
+    protected function insertUser($username, $pwd, $email)
     {
-        $pwd = $fields[1];
+        $this->_db = DB::getInstance();
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-        $fields[1] = $hashedPwd;
+        $fields = array("username" => $username, "password" => $hashedPwd, "email" => $email);
         if (!$this->_db->insert('users', $fields)) {
             throw new Exception('Sorry, there was a problem creating your account');
         }
