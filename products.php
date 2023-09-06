@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<!-- <?php include 'navbar.php'; ?> -->
     <?php
     // Dett her skal vi have lavet om til data fra vores DB istdet, bare hardcodede produkter
     $products = [
