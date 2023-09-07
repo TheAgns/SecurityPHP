@@ -44,7 +44,16 @@ require_once 'src/core/init.php';
         </nav>
     </header>
     <?php
-    if (!Session::exists('username')) {
+    // Validating user role
+    $validate = new Validate();
+    if (Session::exists(Config::get('sessions/username')) && $validate->hasPermission('user')) {
+        echo "Show User Dashboard - " . Session::get(Config::get('sessions/role'));
+    } else if (Session::exists(Config::get('sessions/username')) && $validate->hasPermission('admin')) {
+        echo "Show Admin Dashboard - " . Session::get(Config::get('sessions/role'));
+    }
+    ?>
+    <?php
+    if (!Session::exists(Config::get('sessions/username'))) {
         ?>
         <section class="index-login">
             <div class="wrapper">

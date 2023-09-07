@@ -15,7 +15,8 @@ class Signup
         $fields = [
             "username" => $username,
             "password" => $hashedPwd,
-            "email" => $email
+            "email" => $email,
+            "group" => 2,
         ];
         if (!$this->_db->insert('users', $fields)) {
             throw new Exception('Sorry, there was a problem creating your account');
