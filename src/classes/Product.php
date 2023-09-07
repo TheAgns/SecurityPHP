@@ -1,5 +1,6 @@
 <?php
 require_once("src/core/init.php");
+require_once("../errors/insertProduct.php");
 
 class Product
 {
