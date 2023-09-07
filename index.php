@@ -3,13 +3,22 @@ require_once 'src/core/init.php';
 ?>
 
 
+
+<?php
+include 'logger.php';
+
+if(2>1){
+$log = "User logged in";
+logger($log);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 </head>
 
 <body>
@@ -58,7 +67,6 @@ require_once 'src/core/init.php';
             </div>
         </div>
     </section>
-
 </body>
 
 </html>

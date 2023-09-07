@@ -1,6 +1,5 @@
 <?php
 require_once("src/core/init.php");
-require_once("../errors/insertProduct.php");
 
 class Product
 {
@@ -31,6 +30,7 @@ class Product
                 'img_url' => $img_url,
             ];
             $this->_db->insert('Products', $fields);
+  
         } catch (Exception $e) {
             throw new Exception("Error inserting product: " . $e->getMessage());
         }
