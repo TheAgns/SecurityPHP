@@ -133,10 +133,13 @@ class DB
         return $this->_results;
     }
 
-    public function first()
+    public function first($column = null)
     {
         $data = $this->results();
-        return $data[0];
+        if ($column == null) {
+            return $data[0];
+        }
+        return $data[0][$column];
     }
 
     public function count()

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 define("CORE_PATH", dirname(__FILE__));
@@ -16,7 +15,8 @@ $GLOBALS['config'] = array(
         'charset' => 'utf8mb4'
     ),
     'sessions' => array(
-        'session_name' => 'user',
+        'userid' => 'user',
+        'username' => 'username',
         'token_name' => 'token'
     )
 );

@@ -9,6 +9,14 @@ get('/securityphp', 'index.php');
 // Signs up a new User
 post('/securityphp/signup', 'src/api/signup.endpoint.php');
 
+# LOGIN
+// Logs in a User
+post('/securityphp/login', 'src/api/login.endpoint.php');
+
+# LOGOUT
+// Logs out a User
+get('/securityphp/logout', 'src/api/logout.endpoint.php');
+
 # PRODUCTS
 // Show list of products
 get('/securityphp/products', 'product-list.php');
