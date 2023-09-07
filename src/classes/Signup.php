@@ -12,7 +12,11 @@ class Signup
     {
         $this->_db = DB::getInstance();
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-        $fields = array("username" => $username, "password" => $hashedPwd, "email" => $email);
+        $fields = [
+            "username" => $username,
+            "password" => $hashedPwd,
+            "email" => $email
+        ];
         if (!$this->_db->insert('users', $fields)) {
             throw new Exception('Sorry, there was a problem creating your account');
         }

@@ -19,10 +19,8 @@ require_once 'src/core/init.php';
                 <h3>SECURITY PHP</h3>
                 <ul class="menu-main">
                     <li><a href="/securityphp">HOME</a></li>
-                    <li><a href="a">PRODUCTS</a></li>
-                    <li><a href="/auth">HOME</a></li>
-                    <li><a href="/auth/product">PRODUCTS</a></li>
-                    <li><a href="/auth/create">Create product</a></li>
+                    <li><a href="/securityphp/products">PRODUCTS</a></li>
+                    <li><a href="/securityphp/create">CREATE PRODUCT</a></li>
                     <li><a href="a">CART</a></li>
                     <li><a href="a">PROFILE</a></li>
                 </ul>

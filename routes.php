@@ -1,36 +1,28 @@
 <?php
 require_once __DIR__ . '/router.php';
 
-//Note: Vi mangler .htacess, når den er importet til root i projektet virker routerne.
+# MAIN INDEX
 
-#User routes
-
-#Get all products
-//get('/auth/product', 'src/classes/product-list.php');
-get('/auth/product', 'src/classes/product-list.php');
-
-
-#Get index
 get('/securityphp', 'index.php');
 
-#Get product by id.
-get('/auth/product/$id', 'products.php');
-
-#Delete user, vi bliver nok nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route. 
-post('/auth/deleteUser', 'User.php');
-
-//Update username
-post('/auth/updateusername', 'classes/User.php');
-
+# SIGN UP
+// Signs up a new User
 post('/securityphp/signup', 'src/api/signup.endpoint.php');
 
-get('/auth/create', 'src/classes/create.php');
+# PRODUCTS
+// Show list of products
+get('/securityphp/products', 'product-list.php');
 
-post('/auth/create', 'src/classes/CreateProduct.php');
+// Rediret to create.php page
+get('/securityphp/create', 'createproduct.php');
+
+// Get product details
 
 
+// Creates the new product
+post('/securityphp/create', 'src/api/createProduct.endpoint.php');
 
-#Admin routes
+# ADMIN
 
 #Create product, vi bliver nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
 //post('/auth/product/create', 'src/classes/CreateProduct.php');
