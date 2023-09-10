@@ -1,6 +1,7 @@
 <?php
 
 require_once 'core/init.php';
+include 'logger.php';
 
 if(Input::exists()) {
     if(Token::check(Input::get('token'))) {
@@ -20,11 +21,14 @@ if(Input::exists()) {
             if($login) {
                 Redirect::to('index.php');
             } else {
+                $log = "User failed to log in, username: " . Input::get('username') . " password: " . Input::get('password') . "";
+                logger($log);
                 echo '<p>Incorrect username or password</p>';
             }
         } else {
             foreach($validate->errors() as $error) {
                 echo $error, '<br>';
+
             }
         }
     }

@@ -1,18 +1,6 @@
 <?php
 require_once 'src/core/init.php';
 ?>
-
-
-
-<?php
-include 'logger.php';
-
-if(2>1){
-$log = "User logged in";
-logger($log);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
