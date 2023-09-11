@@ -18,7 +18,8 @@ $GLOBALS['config'] = array(
         'userid' => 'user',
         'username' => 'username',
         'role' => 'role',
-        'token_name' => 'token'
+        'signup_token' => 'signuptoken',
+        'login_token' => 'logintoken'
     )
 );
 

@@ -46,7 +46,7 @@ get('/auth/user/$id', 'User.php');
 
 
 #Other routes
-any('/404', 'views/404.php');
+any('/securityphp/404', 'src/errors/404.php');
 
 
 ?>

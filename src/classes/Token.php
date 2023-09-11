@@ -1,14 +1,17 @@
 <?php
 
-class Token {
-    public static function generate() {
-        return Session::put(Config::get('sessions/token_name'), md5(uniqid()));
+class Token
+{
+    public static function generate($tokenType)
+    {
+        return Session::put(Config::get('sessions/' . $tokenType), md5(uniqid()));
     }
 
-    public static function check($token) {
-        $tokenName = Config::get('sessions/token_name');
+    public static function check($token, $tokenType)
+    {
+        $tokenName = Config::get('sessions/' . $tokenType);
 
-        if(Session::exists($tokenName) && $token === Session::get($tokenName)) {
+        if (Session::exists($tokenName) && $token === Session::get($tokenName)) {
             Session::delete($tokenName);
             return true;
         }

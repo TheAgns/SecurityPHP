@@ -1,3 +1,3 @@
 <?php
 
-echo 'Where do you think your going?';
+echo "<h1>Whoops, there was an error </h1>";

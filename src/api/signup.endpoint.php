@@ -7,11 +7,14 @@ $pwd = escape(Input::get("pwd"));
 $pwdRepeat = escape(Input::get("pwdRepeat"));
 $email = escape(Input::get("email"));
 
-// Create SignupController
-$signupController = new SignupController($username, $pwd, $pwdRepeat, $email);
-$signupController->signupUser();
+if (Token::check(Input::get("signuptoken"), "signup_token")) {
+    // Create SignupController
+    $signupController = new SignupController($username, $pwd, $pwdRepeat, $email);
+    $signupController->signupUser();
 
-$loginController = new LoginController($username, $pwd);
-$loginController->loginUser();
-
-Redirect::to("/securityphp");
+    $loginController = new LoginController($username, $pwd);
+    $loginController->loginUser();
+    Redirect::to("/securityphp");
+} else {
+    Redirect::to("/securityphp/404");
+}

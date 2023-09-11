@@ -12,44 +12,13 @@ require_once 'src/core/init.php';
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div>
-                <h3>SECURITY PHP</h3>
-                <ul class="menu-main">
-                    <li><a href="/securityphp">HOME</a></li>
-                    <li><a href="/securityphp/products">PRODUCTS</a></li>
-                    <li><a href="/securityphp/create">CREATE PRODUCT</a></li>
-                    <li><a href="a">CART</a></li>
-                    <li><a href="a">PROFILE</a></li>
-                </ul>
-            </div>
-            <ul class="menu-member">
-                <?php
-                if (Session::exists('username')) {
-                    ?>
-                    <li><a href="a">
-                            <?php echo Session::get('username'); ?>
-                        </a></li>
-                    <li><a href="/securityphp/logout" class="header-login-a">LOGOUT</a></li>
-                    <?php
-                } else {
-                    ?>
-                    <li><a href="a">SIGN UP</a></li>
-                    <li><a href="a" class="header-login-a">LOGIN</a></li>
-                    <?php
-                }
-                ?>
-            </ul>
-        </nav>
-    </header>
     <?php
     // Validating user role
     $validate = new Validate();
     if (Session::exists(Config::get('sessions/username')) && $validate->hasPermission('user')) {
-        echo "Show User Dashboard - " . Session::get(Config::get('sessions/role'));
+        include(SRC_PATH . "/shared/userheader.php");
     } else if (Session::exists(Config::get('sessions/username')) && $validate->hasPermission('admin')) {
-        echo "Show Admin Dashboard - " . Session::get(Config::get('sessions/role'));
+        include(SRC_PATH . "/shared/adminheader.php");
     }
     ?>
     <?php
@@ -66,6 +35,8 @@ require_once 'src/core/init.php';
                         <input type="password" name="pwdRepeat" placeholder="Repeat Password">
                         <input type="text" name="email" placeholder="Email">
                         <br><br>
+                        <input type="hidden" name="signuptoken" value=<?php echo Token::generate("signup_token"); ?>
+                            id="signuptoken">
                         <button type="submit" name="submit">SIGN UP</button>
                     </form>
                 </div>
@@ -77,6 +48,8 @@ require_once 'src/core/init.php';
                         <input type="text" name="username" placeholder="Username">
                         <input type="password" name="pwd" placeholder="Password">
                         <br><br>
+                        <input type="hidden" name="logintoken" value=<?php echo Token::generate("login_token"); ?>
+                            id="logintoken">
                         <button type="submit" name="submit">LOGIN</button>
                     </form>
                 </div>
