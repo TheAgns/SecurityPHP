@@ -11,7 +11,7 @@ class Signup
     protected function insertUser($username, $pwd, $email)
     {
         $this->_db = DB::getInstance();
-        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+        $hashedPwd = Hash::encryptPassword($pwd);
         $fields = [
             "username" => $username,
             "password" => $hashedPwd,

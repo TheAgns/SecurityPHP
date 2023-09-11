@@ -14,7 +14,7 @@ class Login
         $sql = "SELECT password FROM users where username = ? OR email = ?;";
         // Password check
         $passwordHashed = $this->_db->query($sql, [$username, $username])->first("password");
-        $checkPwd = password_verify($pwd, $passwordHashed);
+        $checkPwd = Hash::isValidPassword($pwd, $passwordHashed);
         if (!$checkPwd) {
             // Passwords doesn't match with DB
             Redirect::to("src/errors/404.php");
