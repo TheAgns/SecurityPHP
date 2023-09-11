@@ -41,7 +41,7 @@ class Input
             // No input in fields
             return false;
         }
-        if (self::invalidUsername($username) == false) {
+        if (self::invalidUsername($inputFields[0]) == false) {
             // Invalid username
             return false;
         }
@@ -50,55 +50,45 @@ class Input
                 // Password repeat doesn't match password
                 return false;
             }
+            if (self::invalidEmail($inputFields[3])) {
+                // Invalid Email
+                return false;
+            }
         }
         return true;
     }
 
+    private static function invalidEmail($email)
+    {
+        return filter_var($email, FILTER_VALIDATE_EMAIL) ? false : true;
+    }
+
     private static function emptyInput($inputFields)
     {
-        $result = null;
         switch (sizeof($inputFields)) {
             case 4:
-                if (empty($inputFields[0]) || empty($inputFields[1]) || empty($inputFields[2]) || empty($inputFields[3])) {
-                    $result = false;
-                } else {
-                    $result = true;
-                }
+                return (empty($inputFields[0]) || empty($inputFields[1]) ||
+                    empty($inputFields[2]) || empty($inputFields[3]))
+                    ? false : true;
                 break;
 
             case 2:
-                if (empty($inputFields[0]) || empty($inputFields[1])) {
-                    $result = false;
-                } else {
-                    $result = true;
-                }
+                return (empty($inputFields[0]) || empty($inputFields[1]))
+                    ? false : true;
                 break;
             default:
-                $result = false;
+                return false;
         }
-        return $result;
     }
 
     private static function invalidUsername($username)
     {
-        $result = null;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
+        return (!preg_match("/^[a-zA-Z0-9]*$/", $username)) ? false : true;
     }
 
     private static function pwdMatch($pwd, $pwdRepeat)
     {
-        $result = null;
-        if ($pwd !== $pwdRepeat) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
+        return ($pwd !== $pwdRepeat) ? false : true;
     }
 
 }
