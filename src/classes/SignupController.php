@@ -20,6 +20,7 @@ class SignupController extends Signup
         }
         if (Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email) == true) {
             $this->insertUser($this->username, $this->pwd, $this->email);
+            session_regenerate_id();
         } else {
             Redirect::to("/securityphp/404");
             exit();

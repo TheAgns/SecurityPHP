@@ -29,6 +29,7 @@ class Login
         if (!isset($_SESSION)) {
             session_start();
         }
+        session_regenerate_id();
         Session::put(Config::get('sessions/userid'), $user['id']);
         Session::put(Config::get('sessions/username'), $user['username']);
         Session::put(Config::get('sessions/role'), $user['group']);
