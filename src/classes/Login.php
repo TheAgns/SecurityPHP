@@ -17,6 +17,7 @@ class Login
         $checkPwd = Hash::isValidPassword($pwd, $passwordHashed);
         if (!$checkPwd) {
             // Passwords doesn't match with DB
+            // TODO: Redirect to index.php with an errormessage
             Redirect::to("src/errors/404.php");
             exit();
         }

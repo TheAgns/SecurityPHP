@@ -2,14 +2,13 @@
 
 require_once("src/core/init.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $productName = $_POST['name'];
-    $price = $_POST['price'];
-    $img_url = $_POST['img_url'];
+$productName = Input::get("name");
+$price = Input::get("price");
+$img_url = Input::get("img_url");
 
-    $productController = new ProductController();
-    $productController->createProduct($productName, $price, $img_url);
+$productController = new ProductController();
+$productController->createProduct($productName, $price, $img_url);
 
-    header("location: /securityphp/products");
-}
+Redirect::to("/securityphp/products");
+
 ?>
