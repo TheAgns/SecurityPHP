@@ -1,6 +1,8 @@
 <?php
+require_once 'src/core/init.php';
+
 session_start();
 session_unset();
 session_destroy();
 
-header("location: /securityphp");
+Redirect::to("/securityphp");

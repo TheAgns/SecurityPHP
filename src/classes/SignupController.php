@@ -14,63 +14,25 @@ class SignupController extends Signup
 
     public function signupUser()
     {
-        /*
-        if ($this->emptyInput() == false) {
-            // Redirect to error page
-            header("location: ../../index.php?error=emptyinput");
+        if ($this->userExists() == true) {
+            Redirect::to("src/errors/404.php");
             exit();
         }
-        if ($this->invalidUsername() == false) {
-            // Redirect to error page
-            header("location: ../../index.php?error=username");
+        if (Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email) == true) {
+            $this->insertUser($this->username, $this->pwd, $this->email);
+        } else {
+            Redirect::to("src/errors/404.php");
             exit();
         }
-        */
-        $this->insertUser($this->username, $this->pwd, $this->email);
     }
 
-    // Private functions for sanitizing and validating input
-    // TODO: move into a valdiation class
-    private function emptyInput()
-    {
-        $result = null;
-        if (empty($this->username) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
-    }
-
-    private function invalidUsername()
-    {
-        $result = null;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
-    }
-
-    private function pwdMatch()
-    {
-        $result = null;
-        if ($this->pwd !== $this->pwdRepeat) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
-    }
-
-    private function idTakenCheck()
+    private function userExists()
     {
         $result = null;
         if (!$this->checkUser($this->username)) {
-            $result = false;
-        } else {
             $result = true;
+        } else {
+            $result = false;
         }
         return $result;
     }

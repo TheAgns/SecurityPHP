@@ -2,15 +2,16 @@
 require_once 'src/core/init.php';
 
 // Retrieving form data from the signup form
-if (isset($_POST["submit"])) {
-    $username = $_POST["username"];
-    $pwd = $_POST["pwd"];
-    $pwdRepeat = $_POST["pwdRepeat"];
-    $email = $_POST["email"];
-}
+$username = escape(Input::get("username"));
+$pwd = escape(Input::get("pwd"));
+$pwdRepeat = escape(Input::get("pwdRepeat"));
+$email = escape(Input::get("email"));
+
 // Create SignupController
 $signupController = new SignupController($username, $pwd, $pwdRepeat, $email);
 $signupController->signupUser();
 
-$userView = new UserView();
-$userView->showUser($username);
+$loginController = new LoginController($username, $pwd);
+$loginController->loginUser();
+
+Redirect::to("/securityphp");

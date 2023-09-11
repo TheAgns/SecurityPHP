@@ -12,28 +12,12 @@ class LoginController extends Login
 
     public function loginUser()
     {
-        /*
-        if ($this->emptyInput() == false) {
-            // Redirect to error page
-            header("location: ../../index.php?error=emptyinput");
+        if (Input::validateProfile($this->username, $this->pwd) == true) {
+            $this->login($this->username, $this->pwd);
+        } else {
+            Redirect::to("src/errors/404.php");
             exit();
         }
-        */
 
-        $this->login($this->username, $this->pwd);
     }
-
-    // Private functions for sanitizing and validating input
-    // TODO: move into a valdiation class
-    private function emptyInput()
-    {
-        $result = null;
-        if (empty($this->username) || empty($this->pwd)) {
-            $result = false;
-        } else {
-            $result = true;
-        }
-        return $result;
-    }
-
 }

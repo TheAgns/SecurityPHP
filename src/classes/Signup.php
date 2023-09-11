@@ -26,12 +26,12 @@ class Signup
 
     protected function checkUser($username)
     {
+        $this->_db = DB::getInstance();
         $results = $this->_db->get('users', array('username', '=', $username));
         if ($results->count()) {
-            return $results->first();
+            return false;
+        } else {
+            return true;
         }
-        // Redirect to error page
-        header("location: ../../index.php");
-        exit();
     }
 }
