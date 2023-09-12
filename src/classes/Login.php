@@ -18,7 +18,7 @@ class Login
         if (!$checkPwd) {
             // Passwords doesn't match with DB
             // TODO: Redirect to index.php with an errormessage
-            Redirect::to("securityphp/404");
+            Redirect::to("/securityphp/404");
             exit();
         }
 
