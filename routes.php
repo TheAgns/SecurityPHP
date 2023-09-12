@@ -30,6 +30,14 @@ get('/securityphp/create', 'createproduct.php');
 // Creates the new product
 post('/securityphp/create', 'src/api/createProduct.endpoint.php');
 
+
+# Orders
+//Show list of orders
+get('/securityphp/orders', 'order-list.php');
+
+//Show details of one order
+get('/securityphp/order', 'order-detail.php');
+
 # ADMIN
 
 #Create product, vi bliver nødt til at sepereate det i to, da vi ikke kan bruge get og post på samme route.
