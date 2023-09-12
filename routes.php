@@ -27,6 +27,9 @@ get('/securityphp/create', 'createproduct.php');
 // Get product details
 
 
+// Adds product to cart
+post('/securityphp/products/add/$id', 'src/api/addProductToCart.endpoint.php');
+
 // Creates the new product
 post('/securityphp/create', 'src/api/createProduct.endpoint.php');
 

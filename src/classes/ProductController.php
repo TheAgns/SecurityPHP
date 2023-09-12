@@ -2,7 +2,7 @@
 
 class ProductController extends Product
 {
-    
+
     public function __construct()
     {
 
@@ -16,5 +16,10 @@ class ProductController extends Product
     public function getProducts()
     {
         return $this->getAllProducts();
+    }
+
+    public function addProductToCart($productId)
+    {
+
     }
 }

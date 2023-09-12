@@ -35,7 +35,7 @@ class ProductView extends Product
                     '" class="product-image"><br>' .
                     '<h2>' . $product['name'] . '</h2>' .
                     '<p>Price: ' . number_format($product['price'], 2) . ',- ddk</p>' .
-                    '<form action="" method="post">' .
+                    '<form action="/secuirtyphp/products/add/$id" method="post">' .
                     '<input type="hidden" name="product_id" value="' . $product['id'] . '">' .
                     '<button type="submit" class="buy-button">Add to Cart</button>' .
                     '</form>' .
