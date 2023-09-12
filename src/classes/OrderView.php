@@ -2,7 +2,7 @@
 
 class OrderView extends Order
 {
-    public function showOrderDetails($order)
+    public function showOrderDetails($order, $orderLineData)
     {
         $order = $order[0];
         echo <<<std
@@ -23,30 +23,15 @@ class OrderView extends Order
                             <th scope="row">User ID</th>
                             <td colspan="3">$order[user_id]</td>
                         </tr>
+        std;
+        $orderLineView = new orderLineView();
+        $orderLineView->showOrdersProducts($orderLineData);
 
-                        <!-- Orderline/Product info -->
-                        <tr>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Product Name 1</td>
-                                        <td>1221$</td>
-                                        <td>3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </tr>
+        echo <<<std
                         <tr>
                             <th colspan="2"></td>
                             <th scope="row">Total Price</th>
-                            <td colspan="3">1000</td>
+                            <td colspan="3">$order[total]</td>
                         </tr>
                     </tbody>
                 </table>
