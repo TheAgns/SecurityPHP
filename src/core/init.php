@@ -28,6 +28,7 @@ spl_autoload_register(function ($class) {
 });
 
 require_once 'src/utils/sanitize.php';
+require_once 'src/utils/logger.php';
 
 /*
 if (Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('sessions/session_name'))) {

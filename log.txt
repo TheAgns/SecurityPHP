@@ -1,1 +1,7 @@
 [2023-09-07 15:20:14] ::1 User logged in
+[2023-09-12 12:57:22] 127.0.0.1 User failed to log in, username: markus, password: jbjbnbnj, ip: 127.0.0.1, time: 2023-09-12 12:57:22
+
+[2023-09-12 13:02:40] 127.0.0.1 User failed to log in, username: jaha, password: asdasda, ip: 127.0.0.1, time: 2023-09-12 13:02:40
+
+[2023-09-12 13:04:01] 127.0.0.1 User failed to log in, username: markus, password: 92929292, ip: 
+[2023-09-12 13:05:22] 127.0.0.1 User failed to log in, username: markus, password: ksksk
