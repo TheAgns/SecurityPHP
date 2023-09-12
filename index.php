@@ -1,14 +1,12 @@
 <?php
 require_once 'src/core/init.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 </head>
 
 <body>
@@ -58,7 +56,6 @@ require_once 'src/core/init.php';
         <?php
     }
     ?>
-
 </body>
 
 </html>
