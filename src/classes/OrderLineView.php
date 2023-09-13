@@ -17,6 +17,7 @@ class OrderLineView extends Order
         std;
 
         foreach ($orderLines as $orderLine) {
+
             echo <<<std
             <tr>
                 <td>$orderLine[name]</td>

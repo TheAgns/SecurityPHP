@@ -13,7 +13,7 @@
             if (Session::exists('username')) {
                 ?>
                 <li><a href="a">
-                        <?php echo Session::get('username'); ?>
+                        <?php out(Session::get('username')); ?>
                     </a></li>
                 <li><a href="/securityphp/logout" class="header-login-a">LOGOUT</a></li>
                 <?php

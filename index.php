@@ -43,7 +43,7 @@ require_once 'src/core/init.php';
                     <h4>LOGIN</h4>
                     <?php
                     if (!empty($_SESSION['message'])) {
-                        echo '<div class="alert alert-danger">' . $_SESSION['message'] . '</div>';
+                        out('<div class="alert alert-danger">' . $_SESSION['message'] . '</div>');
                         unset($_SESSION['message']);
                     }
                     ?>
