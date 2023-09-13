@@ -20,13 +20,13 @@ require_once 'src/core/init.php';
     }
     ?>
     <?php
+    
     if (!Session::exists(Config::get('sessions/username'))) {
         ?>
         <section class="index-login">
             <div class="wrapper">
                 <div class="index-login-signup">
                     <h4>SIGN UP</h4>
-                    <p>Sign up here!</p>
                     <form action="/securityphp/signup" method="post">
                         <input type="text" name="username" placeholder="Username">
                         <input type="password" name="pwd" placeholder="Password">
@@ -41,7 +41,12 @@ require_once 'src/core/init.php';
                 <br>
                 <div class="index-login-login">
                     <h4>LOGIN</h4>
-                    <p>Login here!</p>
+                    <?php
+                 if (!empty($_SESSION['message'])) {
+                    echo '<div class="alert alert-danger">'.$_SESSION['message'].'</div>';
+                    unset($_SESSION['message']);
+                }
+                ?>
                     <form action="/securityphp/login" method="post">
                         <input type="text" name="username" placeholder="Username">
                         <input type="password" name="pwd" placeholder="Password">
