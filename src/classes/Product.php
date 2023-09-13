@@ -13,10 +13,20 @@ class Product
     protected function getAllProducts()
     {
         try {
-            $db = DB::getInstance();
-            return $db->get('Products', [1, '=', 1])->results();
+            $this->_db = DB::getInstance();
+            return $this->_db->get('Products', [1, '=', 1])->results();
         } catch (Exception $e) {
             throw new Exception("Error fetching products: " . $e->getMessage());
+        }
+    }
+
+    protected function getProductById($id)
+    {
+        try {
+            $this->_db = DB::getInstance();
+            return $this->_db->get('Products', ["id", '=', $id])->first();
+        } catch (Exception $e) {
+            throw new Exception("Error fetching product: " . $e->getMessage());
         }
     }
 
@@ -30,9 +40,19 @@ class Product
                 'img_url' => $img_url,
             ];
             $this->_db->insert('Products', $fields);
-  
+
         } catch (Exception $e) {
             throw new Exception("Error inserting product: " . $e->getMessage());
+        }
+    }
+
+    protected function deleteProductById($id)
+    {
+        try {
+            $this->_db = DB::getInstance();
+            $this->_db->delete('products', ["id", '=', $id]);
+        } catch (Exception $e) {
+            throw new Exception("Error deleting product: " . $e->getMessage());
         }
     }
 }

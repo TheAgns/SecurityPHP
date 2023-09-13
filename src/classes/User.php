@@ -1,5 +1,7 @@
 <?php
 
+/*
+
 class User
 {
     private $_db,
@@ -133,3 +135,4 @@ class User
         return $this->isLoggedIn;
     }
 }
+*/

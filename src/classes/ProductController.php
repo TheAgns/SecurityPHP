@@ -18,8 +18,20 @@ class ProductController extends Product
         return $this->getAllProducts();
     }
 
+    public function getProduct($productId)
+    {
+        return $this->getProductById($productId);
+    }
+
+    public function deleteProduct($productId)
+    {
+        $this->deleteProductById($productId);
+    }
+
+    /*
     public function addProductToCart($productId)
     {
 
     }
+    */
 }

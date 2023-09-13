@@ -1,4 +1,5 @@
 <?php
+/*
 require_once("src/core/init.php");
 
 $productController = new ProductController();
@@ -9,3 +10,4 @@ if (empty($id)) {
 } else {
     // TODO: Check if id matches a product in DB and add to Cart if true
 }
+*/

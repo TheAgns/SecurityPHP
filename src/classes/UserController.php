@@ -1,5 +1,5 @@
 <?php
-
+/*
 class UserController extends NewUser
 {
     // GET /user/{id}
@@ -9,3 +9,4 @@ class UserController extends NewUser
         return $responseData = json_encode($user);
     }
 }
+*/

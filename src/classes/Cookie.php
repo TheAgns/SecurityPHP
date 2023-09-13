@@ -1,5 +1,5 @@
 <?php
-
+/*
 class Cookie {
     public static function exists($name) {
         return (isset($_COOKIE[$name])) ? true : false;
@@ -23,3 +23,4 @@ class Cookie {
 
 
 //her giver håndtere vi forskellige cookie operationer som at se om de forskellige cookies er der, indstille cookies og slette cookies //disse funktioner kan bruges til at kunne tilgå brugerspecifikke data eller indstillinger gemt som cookies i en PHP-applikation
+*/

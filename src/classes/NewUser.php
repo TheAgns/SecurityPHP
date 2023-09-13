@@ -1,5 +1,5 @@
 <?php
-
+/*
 class NewUser
 {
     private $_db;
@@ -21,3 +21,4 @@ class NewUser
         }
     }
 }
+*/

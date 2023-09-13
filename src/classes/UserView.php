@@ -1,5 +1,5 @@
 <?php
-
+/*
 class UserView extends NewUser
 {
     public function showUser($username)
@@ -8,3 +8,4 @@ class UserView extends NewUser
         echo "Username: " . $results['username'];
     }
 }
+*/
