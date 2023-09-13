@@ -2,7 +2,7 @@
 
 class OrderLineView extends Order
 {
-    public function showOrdersProducts($orderLineProducts)
+    public function showOrderLines($orderLines)
     {
         echo <<<std
             <table class="table">
@@ -16,13 +16,12 @@ class OrderLineView extends Order
                 <tbody>
         std;
 
-        foreach($orderLineProducts as $order){
-
+        foreach ($orderLines as $orderLine) {
             echo <<<std
             <tr>
-                <td>$order[name]</td>
-                <td>$order[price]</td>
-                <td>$order[quantity]</td>
+                <td>$orderLine[name]</td>
+                <td>$orderLine[price]</td>
+                <td>$orderLine[quantity]</td>
             </tr>
             std;
         }

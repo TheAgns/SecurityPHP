@@ -1,13 +1,13 @@
 <?php
 require_once('src/core/init.php');
 
-
-$productController = new ProductController();
-$products = $productController->getProducts();
-
-$productView = new ProductView();
 if (Session::exists(Config::get("sessions/username"))) {
+
+    $productController = new ProductController();
+    $products = $productController->getProducts();
+
     // Show all products with user or admin functions
+    $productView = new ProductView();
     $productView->showAllProducts($products);
 }
 

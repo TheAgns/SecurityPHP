@@ -15,9 +15,10 @@ class Order
         return $db->get('orders', [1, '=', 1])->results();
     }
 
-    protected function getOrderDetail($id){
+    protected function getOrderById($id)
+    {
         $db = DB::getInstance();
-        return $db->get('orders', ['id','=', $id])->results();
+        return $db->get('orders', ['id', '=', $id])->first();
     }
 
     protected function insertOrder($userID, $total, $comment)

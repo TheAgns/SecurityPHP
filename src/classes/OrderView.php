@@ -2,9 +2,8 @@
 
 class OrderView extends Order
 {
-    public function showOrderDetails($order, $orderLineData)
+    public function showOrderDetails($order, $orderLines)
     {
-        $order = $order[0];
         echo <<<std
         <head>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,7 +24,7 @@ class OrderView extends Order
                         </tr>
         std;
         $orderLineView = new orderLineView();
-        $orderLineView->showOrdersProducts($orderLineData);
+        $orderLineView->showOrderLines($orderLines);
 
         echo <<<std
                         <tr>

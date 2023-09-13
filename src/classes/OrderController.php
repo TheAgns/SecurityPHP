@@ -2,7 +2,7 @@
 
 class OrderController extends Order
 {
-    
+
     public function __construct()
     {
 
@@ -18,7 +18,8 @@ class OrderController extends Order
         return $this->getAllOrders();
     }
 
-    public function getOrder($id){
-        return $this->getOrderDetail($id);
+    public function getOrder($orderId)
+    {
+        return $this->getOrderById($orderId);
     }
 }
