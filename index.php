@@ -20,7 +20,7 @@ require_once 'src/core/init.php';
     }
     ?>
     <?php
-    
+
     if (!Session::exists(Config::get('sessions/username'))) {
         ?>
         <section class="index-login">
@@ -42,11 +42,11 @@ require_once 'src/core/init.php';
                 <div class="index-login-login">
                     <h4>LOGIN</h4>
                     <?php
-                 if (!empty($_SESSION['message'])) {
-                    echo '<div class="alert alert-danger">'.$_SESSION['message'].'</div>';
-                    unset($_SESSION['message']);
-                }
-                ?>
+                    if (!empty($_SESSION['message'])) {
+                        echo '<div class="alert alert-danger">' . $_SESSION['message'] . '</div>';
+                        unset($_SESSION['message']);
+                    }
+                    ?>
                     <form action="/securityphp/login" method="post">
                         <input type="text" name="username" placeholder="Username">
                         <input type="password" name="pwd" placeholder="Password">
