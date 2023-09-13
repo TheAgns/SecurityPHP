@@ -27,11 +27,4 @@ class ProductController extends Product
     {
         $this->deleteProductById($productId);
     }
-
-    /*
-    public function addProductToCart($productId)
-    {
-
-    }
-    */
 }

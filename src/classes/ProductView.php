@@ -10,6 +10,7 @@ class ProductView extends Product
     {
         $validate = new Validate();
         if ($validate->hasPermission("admin")) {
+            include(SRC_PATH . "/shared/adminheader.php");
             foreach ($data as $product) {
                 $html = '<div class="product-card">';
                 $html .=
@@ -27,6 +28,7 @@ class ProductView extends Product
                 echo $html;
             }
         } else if ($validate->hasPermission("user")) {
+            include(SRC_PATH . "/shared/adminheader.php");
             foreach ($data as $product) {
                 $html = '<div class="product-card">';
                 $html .=
