@@ -2,8 +2,11 @@
 
 class Redirect
 {
-    public static function to($location = null)
+    public static function to($location = null, $message = null)
     {
+        if ($message !== null) {
+            echo $message;
+        }
         if ($location) {
             if (is_numeric($location)) {
                 switch ($location) {

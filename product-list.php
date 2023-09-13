@@ -1,11 +1,15 @@
 <?php
 require_once('src/core/init.php');
 
+
 $productController = new ProductController();
 $products = $productController->getProducts();
 
 $productView = new ProductView();
-$productView->showAllProducts($products);
+if (Session::exists(Config::get("sessions/username"))) {
+    // Show all products with user or admin functions
+    $productView->showAllProducts($products);
+}
 
 
 // TODO: MOVE STYLING INTO CORRECT FOLDER & FILE

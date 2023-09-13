@@ -5,7 +5,6 @@
             <ul class="menu-main">
                 <li><a href="/securityphp">HOME</a></li>
                 <li><a href="/securityphp/products">PRODUCTS</a></li>
-                <li><a href="a">CART</a></li>
                 <li><a href="a">PROFILE</a></li>
             </ul>
         </div>

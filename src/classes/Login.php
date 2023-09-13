@@ -16,9 +16,9 @@ class Login
         $passwordHashed = $this->_db->query($sql, [$username, $username])->first("password");
         $checkPwd = Hash::isValidPassword($pwd, $passwordHashed);
         if (!$checkPwd) {
-            // Passwords doesn't match with DB
-            // TODO: Redirect to index.php with an errormessage
-            Redirect::to("/securityphp/404");
+            $log = "User failed to log in, username: " . $username . ", password: " . $pwd ."";
+            logger($log);
+            Redirect::to("/securityphp", $_SESSION['message'] = 'Wrong password or username');
             exit();
         }
 

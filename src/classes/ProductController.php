@@ -2,7 +2,7 @@
 
 class ProductController extends Product
 {
-    
+
     public function __construct()
     {
 
@@ -16,5 +16,15 @@ class ProductController extends Product
     public function getProducts()
     {
         return $this->getAllProducts();
+    }
+
+    public function getProduct($productId)
+    {
+        return $this->getProductById($productId);
+    }
+
+    public function deleteProduct($productId)
+    {
+        $this->deleteProductById($productId);
     }
 }
