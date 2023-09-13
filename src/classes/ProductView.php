@@ -3,7 +3,7 @@ class ProductView extends Product
 {
     public function showProductDetails()
     {
-
+        
     }
 
     public function showAllProducts($data)
