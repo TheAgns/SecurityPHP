@@ -1,12 +1,4 @@
 <?php
-/*
-This is a really simple plug and play rate limiter class meant to be used with APIs.
-Using sessions means we can throw this into any PHP API quickly.
-$token can be anything to uniquely identify a user, either an IP address, an API key, a JWT token, anything that is unique to a single user.
-$prefix can be whatever you want, we default it to "rate"
-On init, we create a md5 hash of our $prefix and our $token, this becomes the prefix throughout the class.
-We then append a timestamp to this prefix
-*/
 class RateExceededException extends Exception {}
 
 class RateLimiter {
