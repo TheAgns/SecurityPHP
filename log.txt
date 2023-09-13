@@ -26,3 +26,9 @@
 [2023-09-13 10:27:59] 127.0.0.1 User failed to log in, username: markus, password: asd
 [2023-09-13 10:28:08] 127.0.0.1 User failed to log in, username: ms, password: sa
 [2023-09-13 10:28:58] 127.0.0.1 User failed to log in, username: markus, password: 121
+[2023-09-13 12:18:12] 127.0.0.1 User failed to log in, username: markus, password: NEJ
+[2023-09-13 12:19:11] 127.0.0.1 User failed to log in, username: markus, password: test
+[2023-09-13 12:19:39] 127.0.0.1 User failed to log in, username: markus, password: asjsajka
+[2023-09-13 12:20:23] 127.0.0.1 User failed to log in, username: markus, password: markus
+[2023-09-13 12:21:21] 127.0.0.1 User failed to log in, username: markus, password: naj
+[2023-09-13 13:29:47] 127.0.0.1 User failed to log in, username: markus, password: 1234

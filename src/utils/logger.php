@@ -39,8 +39,8 @@ function logger($log) {
   $content .= "[$time] $ip $log\n";
 
   if (file_put_contents($logFilePath, $content) === false) {
-    die("Error writing to log file: " . error_get_last()['message']);
-}
+       die("Error writing to log file: " . error_get_last()['message']);
+   }
 }
 
 ?>
