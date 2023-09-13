@@ -20,8 +20,7 @@ class Login
             // TODO: Redirect to index.php with an errormessage
             $log = "User failed to log in, username: " . $username . ", password: " . $pwd ."";
             logger($log);
-            echo $log;
-            #Redirect::to("/securityphp/404");
+            Redirect::to("/securityphp");
             exit();
         }
 
