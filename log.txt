@@ -32,3 +32,4 @@
 [2023-09-13 12:20:23] 127.0.0.1 User failed to log in, username: markus, password: markus
 [2023-09-13 12:21:21] 127.0.0.1 User failed to log in, username: markus, password: naj
 [2023-09-13 13:29:47] 127.0.0.1 User failed to log in, username: markus, password: 1234
+[2023-09-13 16:00:28] ::1 User failed to log in, username: Rapper, password: skrt

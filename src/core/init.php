@@ -21,6 +21,10 @@ $GLOBALS['config'] = array(
         'signup_token' => 'signup',
         'login_token' => 'login',
         'token' => 'token'
+    ),
+    'api' => array(
+        'datasite_key' => '6LfAKfgnAAAAAMJ1aHAy-_iepR4oxuVsss0gUQBc',
+        'api_key' => '6LfAKfgnAAAAAFPIbzYDV36oTSofW7ql9XzYblyA'
     )
 );
 
@@ -29,6 +33,7 @@ spl_autoload_register(function ($class) {
 });
 
 require_once 'src/utils/sanitize.php';
+require_once 'src/utils/recaptcha.php';
 require_once 'src/utils/logger.php';
 
 /*

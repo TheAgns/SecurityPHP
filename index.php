@@ -43,7 +43,7 @@ require_once 'src/core/init.php';
                     <h4>LOGIN</h4>
                     <?php
                     if (!empty($_SESSION['message'])) {
-                        out('<div class="alert alert-danger">' . $_SESSION['message'] . '</div>');
+                        echo ('<div class="alert alert-danger">' . $_SESSION['message'] . '</div>');
                         unset($_SESSION['message']);
                     }
                     ?>
@@ -53,6 +53,7 @@ require_once 'src/core/init.php';
                         <br><br>
                         <input type="hidden" name="logintoken" value=<?php echo Token::generate("login_token"); ?>
                             id="logintoken">
+                        <div class="g-recaptcha" data-sitekey=<?php echo Config::get("api/datasite_key"); ?>></div>
                         <button type="submit" name="submit">LOGIN</button>
                     </form>
                 </div>
@@ -61,6 +62,7 @@ require_once 'src/core/init.php';
         <?php
     }
     ?>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
