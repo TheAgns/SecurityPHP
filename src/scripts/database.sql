@@ -48,10 +48,10 @@ CREATE TABLE Orders (
 CREATE TABLE Orderline (
   id INT PRIMARY KEY,
   order_id INT,
-  product_name VARCHAR(255),
-  product_price DOUBLE,
+  product_ïd INT,
   quantity INT,
-  FOREIGN KEY (order_id) REFERENCES Orders(id)
+  FOREIGN KEY (order_id) REFERENCES Orders(id),
+  FOREIGN KEY (product_id) REFERENCES Products(id)
 );
 
 CREATE TABLE Basket (
