@@ -15,6 +15,7 @@ if (Session::exists(Config::Get("sessions/username")) && $validate->hasPermissio
         $orderView->showOrderDetails($order, $orderLines);
     } else {
         Redirect::to("/securityphp/404");
+        exit();
     }
 } else if (Session::exists(Config::Get("sessions/username")) && $validate->hasPermission("admin")) {
     $orderController = new OrderController();

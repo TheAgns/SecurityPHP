@@ -10,6 +10,7 @@ if (Session::exists(Config::get("sessions/username")) && $validate->hasPermissio
     $orderView->showAllOrders($orders);
 } else {
     Redirect::to("/securityphp/404");
+    exit();
 }
 
 ?>

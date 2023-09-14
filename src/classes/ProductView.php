@@ -4,7 +4,7 @@ class ProductView extends Product
     public function showCreateProductForm()
     {
         echo <<<std
-            <head>
+            '<head>
                 <title>Document</title>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
             </head>
@@ -23,7 +23,7 @@ class ProductView extends Product
                         <label for="img_url">Image URL</label>
                         <input type="text" name="img_url" id="img_url" required>
                     </div>
-                    <button type="submit">Create Product</button>
+                    <button type="submit">Create Product</button>'
                 </form>
             </body>
           std;
@@ -34,6 +34,7 @@ class ProductView extends Product
         $validate = new Validate();
         if ($validate->hasPermission("admin")) {
             include(SRC_PATH . "/shared/adminheader.php");
+            $token = Token::generate("token");
             foreach ($data as $product) {
                 $html = '<div class="product-card">';
                 $html .=
@@ -44,14 +45,19 @@ class ProductView extends Product
                     '<p>Price: ' . number_format($product['price'], 2) . ',- ddk</p>' .
                     '<form method="post">' .
                     '<input type="hidden" name="product_id" value="' . $product['id'] . '">' .
-                    '<input type="hidden" name="token" value="' . Token::generate("token") . '">' .
+                    '<input type="hidden" name="token" value="' . $token . '">' .
                     '<button type="submit" formaction="/securityphp/products/delete/' . $product['id'] . '" class="buy-button">Delete</button>' .
                     '</form>' .
                     '</div>';
+                if (isset($_SESSION['errormessage'])) {
+                    $html .= '<div class="alert alert-danger">' . $_SESSION['errormessage'] . '</div>';
+                    unset($_SESSION['errormessage']);
+                }
                 echo $html;
             }
         } else if ($validate->hasPermission("user")) {
             include(SRC_PATH . "/shared/adminheader.php");
+            $token = $token = Token::generate("token");
             foreach ($data as $product) {
                 $html = '<div class="product-card">';
                 $html .=
@@ -62,7 +68,7 @@ class ProductView extends Product
                     '<p>Price: ' . number_format($product['price'], 2) . ',- ddk</p>' .
                     '<form action="/secuirtyphp/products/add/$id" method="post">' .
                     '<input type="hidden" name="product_id" value="' . $product['id'] . '">' .
-                    '<input type="hidden" name="token" value="' . Token::generate("token") . '">' .
+                    '<input type="hidden" name="token" value="' . $token . '">' .
                     '<button type="submit" class="buy-button">Add to Cart</button>' .
                     '</form>' .
                     '</div>';

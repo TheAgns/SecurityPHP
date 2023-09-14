@@ -30,6 +30,8 @@ class Order
             'comment' => $comment,
             'created' => new DateTime('now')
         ];
-        $this->_db->insert('orders', $fields);
+        if (!$this->_db->insert('orders', $fields)) {
+            Redirect::to("/securityphp", "There was an error creating the order");
+        }
     }
 }

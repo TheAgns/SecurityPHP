@@ -1,8 +1,6 @@
 <?php
 require_once 'src/core/init.php';
 
-
-
 if (Token::check(Input::get("logintoken"), "login_token") && checkRecaptcha()) {
     // Retrieving form data from the login form
     $username = escape(Input::get("username"));
@@ -14,4 +12,5 @@ if (Token::check(Input::get("logintoken"), "login_token") && checkRecaptcha()) {
     Redirect::to("/securityphp");
 } else {
     Redirect::to("/securityphp/404");
+    exit();
 }
