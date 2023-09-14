@@ -1,37 +1,12 @@
-[2023-09-07 15:20:14] ::1 User logged in
 [2023-09-12 12:57:22] 127.0.0.1 User failed to log in, username: markus, password: jbjbnbnj, ip: 127.0.0.1, time: 2023-09-12 12:57:22
 
 [2023-09-12 13:02:40] 127.0.0.1 User failed to log in, username: jaha, password: asdasda, ip: 127.0.0.1, time: 2023-09-12 13:02:40
 
 [2023-09-12 13:04:01] 127.0.0.1 User failed to log in, username: markus, password: 92929292, ip: 
-[2023-09-12 13:05:22] 127.0.0.1 User failed to log in, username: markus, password: ksksk
-[2023-09-12 13:08:08] 127.0.0.1 User failed to log in, username: markus, password: test1234
-[2023-09-12 13:10:55] 127.0.0.1 User failed to log in, username: markus, password: 11211
-[2023-09-12 13:11:50] 127.0.0.1 User failed to log in, username: markus, password: 11111
-[2023-09-12 13:12:12] 127.0.0.1 User failed to log in, username: markus, password: kasksk
-[2023-09-12 13:12:48] 127.0.0.1 User failed to log in, username: markus, password: ksksks
-[2023-09-13 10:12:58] 127.0.0.1 User failed to log in, username: markus, password: test
-[2023-09-13 10:13:33] 127.0.0.1 User failed to log in, username: markus, password: 1234111
-[2023-09-13 10:13:52] 127.0.0.1 User failed to log in, username: skska, password: saa
-[2023-09-13 10:15:25] 127.0.0.1 User failed to log in, username: markus, password: 123131
-[2023-09-13 10:17:55] 127.0.0.1 User failed to log in, username: markus, password: 12341221
-[2023-09-13 10:18:25] 127.0.0.1 User failed to log in, username: markus, password: shhasa
-[2023-09-13 10:20:29] 127.0.0.1 User failed to log in, username: markus, password: hsahash
-[2023-09-13 10:21:05] 127.0.0.1 User failed to log in, username: Markus, password: skasjkas
-[2023-09-13 10:22:48] 127.0.0.1 User failed to log in, username: markus, password: 121sa
-[2023-09-13 10:24:23] 127.0.0.1 User failed to log in, username: markus, password: jsajas
-[2023-09-13 10:24:43] 127.0.0.1 User failed to log in, username: markus, password: te
-[2023-09-13 10:25:43] 127.0.0.1 User failed to log in, username: markus, password: markus
-[2023-09-13 10:27:29] 127.0.0.1 User failed to log in, username: markus, password: saa
-[2023-09-13 10:27:59] 127.0.0.1 User failed to log in, username: markus, password: asd
-[2023-09-13 10:28:08] 127.0.0.1 User failed to log in, username: ms, password: sa
-[2023-09-13 10:28:58] 127.0.0.1 User failed to log in, username: markus, password: 121
-[2023-09-13 12:18:12] 127.0.0.1 User failed to log in, username: markus, password: NEJ
-[2023-09-13 12:19:11] 127.0.0.1 User failed to log in, username: markus, password: test
-[2023-09-13 12:19:39] 127.0.0.1 User failed to log in, username: markus, password: asjsajka
-[2023-09-13 12:20:23] 127.0.0.1 User failed to log in, username: markus, password: markus
-[2023-09-13 12:21:21] 127.0.0.1 User failed to log in, username: markus, password: naj
-[2023-09-13 13:29:47] 127.0.0.1 User failed to log in, username: markus, password: 1234
+
 [2023-09-13 16:00:28] ::1 User failed to log in, username: Rapper, password: skrt
 [2023-09-14 10:12:46] ::1 User failed to log in, username: skrt, password: skrt
 [2023-09-14 10:57:22] ::1 User failed to log in, username: hej, password: hej
+[2023-09-14 10:48:04] [IP: 127.0.0.1] - [INFO] User failed to log in, username: wsa, password: 
+[2023-09-14 10:48:52] [IP: 127.0.0.1] - [INFO] User failed to log in, username: sa
+[2023-09-14 10:51:15] [IP: 127.0.0.1] - [INFO] User failed to log in wrong password or username, username: TEST
