@@ -4,9 +4,6 @@ require_once("src/core/init.php");
 $validate = new Validate();
 
 if (Session::exists(Config::get("sessions/username")) && $validate->hasPermission("admin")) {
-    var_dump(Input::get("token"), "token");
-    var_dump(Session::get(Config::get("sessions/token")));
-
     if (Token::check(Input::get("token"), "token")) {
         $productController = new ProductController();
 
