@@ -42,9 +42,9 @@ require_once 'src/core/init.php';
                 <div class="index-login-login">
                     <h4>LOGIN</h4>
                     <?php
-                    if (!empty($_SESSION['message'])) {
-                        echo ('<div class="alert alert-danger">' . $_SESSION['message'] . '</div>');
-                        unset($_SESSION['message']);
+                    if (isset($_SESSION['errormessage'])) {
+                        echo ('<div class="alert alert-danger">' . $_SESSION['errormessage'] . '</div>');
+                        unset($_SESSION['errormessage']);
                     }
                     ?>
                     <form action="/securityphp/login" method="post">

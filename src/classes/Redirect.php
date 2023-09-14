@@ -5,7 +5,7 @@ class Redirect
     public static function to($location = null, $message = null)
     {
         if ($message !== null) {
-            $_SESSION["message"] = $message;
+            $_SESSION["errormessage"] = $message;
         }
         if ($location) {
             if (is_numeric($location)) {

@@ -14,10 +14,8 @@ class LoginController extends Login
     {
         if (Input::validateProfile($this->username, $this->pwd) == true) {
             $this->login($this->username, $this->pwd);
-        } else {
-            Redirect::to("/securityphp/404");
-            exit();
+            $this->username = null;
+            $this->pwd = null;
         }
-
     }
 }

@@ -16,6 +16,5 @@ if (Session::exists(Config::get("sessions/username")) && $validate->hasPermissio
         $productView = new ProductView();
         $productView->showCreateProductForm();
     }
-
 }
 ?>
