@@ -10,3 +10,11 @@
 [2023-09-14 10:48:04] [IP: 127.0.0.1] - [INFO] User failed to log in, username: wsa, password: 
 [2023-09-14 10:48:52] [IP: 127.0.0.1] - [INFO] User failed to log in, username: sa
 [2023-09-14 10:51:15] [IP: 127.0.0.1] - [INFO] User failed to log in wrong password or username, username: TEST
+[2023-09-15 14:30:29] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: ????
+[2023-09-15 14:32:08] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: ??
+[2023-09-15 14:33:12] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: ???
+[2023-09-15 14:33:40] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: ??
+[2023-09-15 14:33:52] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
+[2023-09-15 14:34:17] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
+[2023-09-15 14:38:39] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
+[2023-09-15 14:38:57] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 

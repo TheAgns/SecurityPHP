@@ -12,10 +12,14 @@ class LoginController extends Login
 
     public function loginUser()
     {
-        if (Input::validateProfile($this->username, $this->pwd) == true) {
+        $validation = Input::validateProfile($this->username, $this->pwd);
+
+        if ($validation === true) {
             $this->login($this->username, $this->pwd);
             $this->username = null;
             $this->pwd = null;
+        } else {
+            Redirect::to("/securityphp", $validation);
         }
     }
 }

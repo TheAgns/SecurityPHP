@@ -39,20 +39,24 @@ class Input
 
         if (self::emptyInput($inputFields) == false) {
             // No input in fields
-            return false;
+            $errorMessage = "Please fill in the fields";
+            return $errorMessage;
         }
         if (self::invalidUsername($inputFields[0]) == false) {
             // Invalid username
-            return false;
+            $errorMessage = "Invalid Username";
+            return $errorMessage;
         }
         if (sizeof($inputFields) > 2) {
             if (self::pwdMatch($inputFields[1], $inputFields[2]) == false) {
                 // Password repeat doesn't match password
-                return false;
+                $errorMessage = "The password fields don't match";
+                return $errorMessage;
             }
             if (self::invalidEmail($inputFields[3])) {
                 // Invalid Email
-                return false;
+                $errorMessage = "Invalid email";
+                return $errorMessage;
             }
         }
         return true;
@@ -83,7 +87,7 @@ class Input
 
     private static function invalidUsername($username)
     {
-        return (!preg_match("/^[a-zA-Z0-9_@]*$/", $username)) ? false : true;
+        return (!preg_match("/^[a-zA-Z0-9_@.]*$/", $username)) ? false : true;
     }
 
     private static function pwdMatch($pwd, $pwdRepeat)
