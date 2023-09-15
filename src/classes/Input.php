@@ -83,7 +83,7 @@ class Input
 
     private static function invalidUsername($username)
     {
-        return (!preg_match("/^[a-zA-Z0-9]*$/", $username)) ? false : true;
+        return (!preg_match("/^[a-zA-Z0-9_@]*$/", $username)) ? false : true;
     }
 
     private static function pwdMatch($pwd, $pwdRepeat)
