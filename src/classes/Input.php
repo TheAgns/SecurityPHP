@@ -37,18 +37,18 @@ class Input
             $inputFields = [$username, $pwd, $pwdRepeat, $email];
         }
 
-        if (self::emptyInput($inputFields) == false) {
+        if (!self::emptyInput($inputFields)) {
             // No input in fields
             $errorMessage = "Please fill in the fields";
             return $errorMessage;
         }
-        if (self::invalidUsername($inputFields[0]) == false) {
+        if (!self::invalidUsername($inputFields[0])) {
             // Invalid username
             $errorMessage = "Invalid Username";
             return $errorMessage;
         }
         if (sizeof($inputFields) > 2) {
-            if (self::pwdMatch($inputFields[1], $inputFields[2]) == false) {
+            if (!self::pwdMatch($inputFields[1], $inputFields[2])) {
                 // Password repeat doesn't match password
                 $errorMessage = "The password fields don't match";
                 return $errorMessage;

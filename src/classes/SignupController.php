@@ -15,15 +15,14 @@ class SignupController extends Signup
     public function signupUser()
     {
         if ($this->userExists() == true) {
-            Redirect::to("/securityphp", "This Username is taken");
+            Redirect::to("/securityphp", "This username is taken");
             exit();
         }
-        $validate = Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email);
-        if ($validate == true) {
+        $validation = Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email);
+        if ($validation === true) {
             $this->insertUser($this->username, $this->pwd, $this->email);
-            session_regenerate_id();
         } else {
-            Redirect::to("/securityphp", $validate);
+            Redirect::to("/securityphp", $validation);
             exit();
         }
     }
