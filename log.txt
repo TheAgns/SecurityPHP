@@ -18,3 +18,4 @@
 [2023-09-15 14:34:17] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
 [2023-09-15 14:38:39] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
 [2023-09-15 14:38:57] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: 
+[2023-09-15 18:03:51] [IP: ::1] - [INFO] User failed to log in wrong password or username, username: Rapper

@@ -56,7 +56,7 @@ class ProductView extends Product
                 echo $html;
             }
         } else if ($validate->hasPermission("user")) {
-            include(SRC_PATH . "/shared/adminheader.php");
+            include(SRC_PATH . "/shared/userheader.php");
             $token = $token = Token::generate("token");
             foreach ($data as $product) {
                 $html = '<div class="product-card">';
