@@ -18,11 +18,12 @@ class SignupController extends Signup
             Redirect::to("/securityphp", "This Username is taken");
             exit();
         }
-        if (Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email) == true) {
+        $validate = Input::validateProfile($this->username, $this->pwd, $this->pwdRepeat, $this->email);
+        if ($validate == true) {
             $this->insertUser($this->username, $this->pwd, $this->email);
             session_regenerate_id();
         } else {
-            Redirect::to("/securityphp", "Passwords don't match or Email is invalid");
+            Redirect::to("/securityphp", $validate);
             exit();
         }
     }
