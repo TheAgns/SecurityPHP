@@ -25,7 +25,7 @@ class Login
         // Login Step
         $sql = "SELECT * FROM users where username = ? OR email = ? AND password = ?;";
         $user = $this->_db->query($sql, [$username, $username, $pwd])->first();
-        
+        if ()
         session_regenerate_id();
         Session::put(Config::get('sessions/userid'), $user['id']);
         Session::put(Config::get('sessions/username'), $user['username']);
